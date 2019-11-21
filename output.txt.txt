@@ -1,0 +1,85 @@
+Using TensorFlow backend.
+Input 'Porter Stemming' for porter stemming, 'Stop Words' for stop words, or anywords for Neither of them: 
+Do you want to include porter stemming or stop word?
+y
+Input 'LSTM' for LSTM RNN, 'GRU' for GRU RNN 
+Do you want to compile the model using LSTM RNN or GRU RNN?
+LSTM
+---Review Processing Done!---
+
+---Test Review Processing Done!---
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:66: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:541: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:4432: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:148: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:3733: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:4267: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/optimizers.py:793: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:3657: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/nn_impl.py:183: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 500, 32)           160000    
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 500, 32)           0         
+_________________________________________________________________
+conv1d_1 (Conv1D)            (None, 500, 32)           3104      
+_________________________________________________________________
+max_pooling1d_1 (MaxPooling1 (None, 250, 32)           0         
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 100)               53200     
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 100)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 101       
+=================================================================
+Total params: 216,405
+Trainable params: 216,405
+Non-trainable params: 0
+_________________________________________________________________
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:1033: The name tf.assign_add is deprecated. Please use tf.compat.v1.assign_add instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:1020: The name tf.assign is deprecated. Please use tf.compat.v1.assign instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:3005: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+Train on 20000 samples, validate on 5000 samples
+Epoch 1/3
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:190: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:197: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2019-11-21 17:11:06.845969: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2019-11-21 17:11:06.846380: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x2bf19c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2019-11-21 17:11:06.846427: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2019-11-21 17:11:06.935925: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2019-11-21 17:11:07.052574: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2019-11-21 17:11:07.052676: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (f0d44aca5283): /proc/driver/nvidia/version does not exist
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:207: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:216: The name tf.is_variable_initialized is deprecated. Please use tf.compat.v1.is_variable_initialized instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:223: The name tf.variables_initializer is deprecated. Please use tf.compat.v1.variables_initializer instead.
+
+20000/20000 [==============================] - 135s 7ms/step - loss: 0.5000 - acc: 0.7324 - val_loss: 0.3312 - val_acc: 0.8644
+Epoch 2/3
+20000/20000 [==============================] - 134s 7ms/step - loss: 0.3107 - acc: 0.8772 - val_loss: 0.3021 - val_acc: 0.8742
+Epoch 3/3
+20000/20000 [==============================] - 134s 7ms/step - loss: 0.2325 - acc: 0.9118 - val_loss: 0.2911 - val_acc: 0.8834
+The roc AUC socre for GRU(using porter stemming) model is : 0.9491.
+[[11195  1305]
+ [ 1743 10757]]
