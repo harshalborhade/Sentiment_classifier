@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 24 16:45:13 2018
-
-@author: Mohammad Wasil Saleem
-"""
 # Sentimnetal Analysis Using Bags Of Words.
 
 import pandas as pd
