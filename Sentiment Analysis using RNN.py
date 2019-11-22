@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Oct 27 17:41:20 2018
-
-@author: Mohammad Wasil Saleem.
-"""
-
 import re
 import pickle
 import numpy as np
@@ -25,8 +19,6 @@ def reviewWords(review, method):
     data_train_no_punctuation = re.sub(r"[^a-zA-Z]", " ", data_train_lower )
        
     # using porter stemming.
-    # https://pythonprogramming.net/stemming-nltk-tutorial/
-    # https://github.com/MohammadWasil/Coursera-Machine-Learning-Python/blob/master/CSR%20ML/WEEK%237/Machine%20Learning%20Assignment%236/Python/processEmail.py
     if method == "Porter Stemming":
         #print("Processing dataset with porter stemming...")
         stemmedWords = [ps.stem(word) for word in re.findall(r"\w+", data_train_no_punctuation)]
